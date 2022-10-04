@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/calculator_bloc.dart';
+import '../section/display.dart';
 import '../section/keyboard.dart';
 
 class CalculatorScreen extends StatefulWidget {
@@ -17,7 +15,7 @@ class CalculatorScreen extends StatefulWidget {
 class _CalculatorScreenState extends State<CalculatorScreen> {
   _onPressed(String command) {
     setState(() {
-      context.read<CalculatorBloc>();
+      context.read<CalculatorBloc>().add(CalculatorEvent(command: command));
     });
   }
 
@@ -27,6 +25,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       debugShowCheckedModeBanner: false,
       home: Column(
         children: <Widget>[
+          BlocBuilder<CalculatorBloc, CalculatorState>(builder: (__, state) {
+            return Display(state.value);
+          }),
           Keyboard(_onPressed),
         ],
       ),

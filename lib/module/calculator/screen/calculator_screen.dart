@@ -23,13 +23,20 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Column(
-        children: <Widget>[
-          BlocBuilder<CalculatorBloc, CalculatorState>(builder: (__, state) {
-            return Display(state.value);
-          }),
-          Keyboard(_onPressed),
-        ],
+      home: Container(
+        decoration: new BoxDecoration(
+            image: new DecorationImage(
+          image: new AssetImage("assets/images/bg_white.png"),
+          fit: BoxFit.fill,
+        )),
+        child: Column(
+          children: <Widget>[
+            BlocBuilder<CalculatorBloc, CalculatorState>(builder: (__, state) {
+              return Display(state.value);
+            }),
+            Keyboard(_onPressed),
+          ],
+        ),
       ),
     );
   }

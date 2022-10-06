@@ -26,3 +26,5 @@ doc/api/
 .flutter-plugins
 .flutter-plugins-dependencies
 *.DS_Store
+*.plist
+ios/Runner/Info.plist

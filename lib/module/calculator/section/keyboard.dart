@@ -12,8 +12,7 @@ class Keyboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
-      // color: Color.fromRGBO(48, 48, 48, 1),
-      height: 550,
+      height: 555,
       child: Column(
         children: <Widget>[
           SizedBox(height: 20),

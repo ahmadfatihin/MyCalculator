@@ -1,6 +1,6 @@
 part of 'calculator_bloc.dart';
 
-abstract class CalculatorState extends Equatable {
+class CalculatorState extends Equatable {
   // const CalculatorState();
   static const operations = const ['%', '/', 'x', '-', '+', '='];
 

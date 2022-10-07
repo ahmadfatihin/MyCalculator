@@ -1,9 +1,6 @@
 part of 'calculator_bloc.dart';
 
-class CalculatorEvent extends Equatable {
-  const CalculatorEvent({this.command});
+class CalculatorEvent {
   final String command;
-
-  @override
-  List<Object> get props => [];
+  CalculatorEvent({this.command});
 }

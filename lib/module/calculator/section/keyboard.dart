@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
-import 'package:my_calculator/theme.dart';
 
 import '../component/button.dart';
 import '../component/calculator_button.dart';

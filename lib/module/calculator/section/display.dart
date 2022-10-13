@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 import 'package:my_calculator/module/calculator/component/header.dart';
-import 'package:my_calculator/module/calculator/state/cubit/theme_cubit.dart';
-import 'package:my_calculator/theme.dart';
 
 class Display extends StatelessWidget {
   final String text;

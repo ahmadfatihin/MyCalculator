@@ -1,10 +1,10 @@
 part of 'theme_cubit.dart';
 
-abstract class ThemeState extends Equatable {
-  const ThemeState();
+@immutable
+abstract class ThemeState {}
 
-  @override
-  List<Object> get props => [];
-}
-
+// State for initial app
 class ThemeInitial extends ThemeState {}
+
+// State for controll the theme of the app
+class ThemeChanged extends ThemeState {}

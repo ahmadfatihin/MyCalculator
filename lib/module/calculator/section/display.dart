@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
+import 'package:my_calculator/module/calculator/state/cubit/theme_cubit.dart';
 import 'package:my_calculator/theme.dart';
 
 class Display extends StatefulWidget {
@@ -21,36 +22,29 @@ class _DisplayState extends State<Display> {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          IconButton(
-            onPressed: () {
-              //  context.read<CalculatorBloc>().add(CalculatorEvent(command: command));
-              setState(() {
-                _iconBool = !_iconBool;
-              });
-            },
-            icon: Icon(_iconBool ? _iconDark : _iconLight),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: AutoSizeText(
-              widget.text,
-              minFontSize: 20,
-              maxFontSize: 80,
-              maxLines: 1,
-              textAlign: TextAlign.end,
-              style: TextStyle(
-                fontWeight: FontWeight.w100,
-                decoration: TextDecoration.none,
-                fontSize: 80,
-                color: Colors.white,
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: AutoSizeText(
+                widget.text,
+                minFontSize: 20,
+                maxFontSize: 80,
+                maxLines: 1,
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                  fontWeight: FontWeight.w100,
+                  decoration: TextDecoration.none,
+                  fontSize: 80,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

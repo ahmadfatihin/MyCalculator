@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
+import 'package:my_calculator/module/calculator/state/cubit/theme_cubit.dart';
 import 'package:my_calculator/theme.dart';
 import '../state/calculator_bloc/calculator_bloc.dart';
 import '../section/display.dart';
@@ -16,7 +17,7 @@ class CalculatorScreen extends StatefulWidget {
 class _CalculatorScreenState extends State<CalculatorScreen> {
   _onPressed(String command) {
     setState(() {
-      // context.read<CalculatorBloc>().add(CalculatorEvent(command: command));
+      context.read<CalculatorBloc>().add(CalculatorEvent(command: command));
     });
   }
 
@@ -30,7 +31,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           fit: BoxFit.fill,
         )),
         child: GlassContainer(
-          color: kBlackColor,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: Column(
             children: <Widget>[
               BlocBuilder<CalculatorBloc, CalculatorState>(

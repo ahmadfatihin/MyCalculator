@@ -4,18 +4,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_calculator/theme.dart';
 
 import 'module/calculator/state/calculator_bloc/calculator_bloc.dart';
+import 'module/calculator/state/cubit/theme_cubit.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => ThemeCubit())],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ThemeCubit theme = BlocProvider.of<ThemeCubit>(context, listen: true);
     return MaterialApp(
       title: 'Flutter Demo',
-      // theme: _iconBool ? lightThemeData(context) : darkThemeData(context),
+      theme: theme.isDark ? darkThemeData(context) : lightThemeData(context),
       home: BlocProvider(
         create: (_) => CalculatorBloc(),
         child: CalculatorScreen(),

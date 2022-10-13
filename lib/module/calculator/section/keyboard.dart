@@ -13,7 +13,7 @@ class Keyboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
-      color: kBlackColor,
+      color: Theme.of(context).scaffoldBackgroundColor,
       height: 555,
       child: Column(
         children: <Widget>[

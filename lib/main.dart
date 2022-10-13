@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_calculator/theme.dart';
 
-import 'module/calculator/blocs/calculator_bloc/calculator_bloc.dart';
+import 'module/calculator/state/calculator_bloc/calculator_bloc.dart';
 
 void main() {
   runApp(MyApp());

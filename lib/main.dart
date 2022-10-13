@@ -1,8 +1,9 @@
 import 'package:my_calculator/module/calculator/screen/calculator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_calculator/theme.dart';
 
-import 'module/calculator/bloc/calculator_bloc.dart';
+import 'module/calculator/blocs/calculator_bloc/calculator_bloc.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,11 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-
-        primarySwatch: Colors.blue,
-      ),
+      // theme: _iconBool ? lightThemeData(context) : darkThemeData(context),
       home: BlocProvider(
         create: (_) => CalculatorBloc(),
         child: CalculatorScreen(),

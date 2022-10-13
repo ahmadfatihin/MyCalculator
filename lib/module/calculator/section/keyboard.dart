@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
+import 'package:my_calculator/theme.dart';
 
 import '../component/button.dart';
 import '../component/calculator_button.dart';
@@ -12,6 +13,7 @@ class Keyboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
+      color: kBlackColor,
       height: 555,
       child: Column(
         children: <Widget>[

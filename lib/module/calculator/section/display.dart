@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:my_calculator/module/calculator/component/header.dart';
 
 class Display extends StatelessWidget {
   final String text;
@@ -9,12 +10,12 @@ class Display extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: Container(
-        color: Colors.transparent,
+      child: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Header(),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: AutoSizeText(

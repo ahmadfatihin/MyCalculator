@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../bloc/calculator_bloc.dart';
+import 'package:glassmorphism_ui/glassmorphism_ui.dart';
+import '../state/calculator_bloc/calculator_bloc.dart';
 import '../section/display.dart';
 import '../section/keyboard.dart';
 
@@ -21,21 +21,24 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Container(
+    return Scaffold(
+      body: Container(
         decoration: new BoxDecoration(
             image: new DecorationImage(
-          image: new AssetImage("assets/images/bg_white.png"),
+          image: new AssetImage("assets/images/bg.png"),
           fit: BoxFit.fill,
         )),
-        child: Column(
-          children: <Widget>[
-            BlocBuilder<CalculatorBloc, CalculatorState>(builder: (__, state) {
-              return Display(state.value);
-            }),
-            Keyboard(_onPressed),
-          ],
+        child: GlassContainer(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          child: Column(
+            children: <Widget>[
+              BlocBuilder<CalculatorBloc, CalculatorState>(
+                  builder: (__, state) {
+                return Display(state.value);
+              }),
+              Keyboard(_onPressed),
+            ],
+          ),
         ),
       ),
     );

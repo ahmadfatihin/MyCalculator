@@ -1,5 +1,6 @@
 part of 'calculator_bloc.dart';
 
+// ignore: must_be_immutable
 class CalculatorState extends Equatable {
   // const CalculatorState();
   static const operations = const ['%', '/', 'x', '-', '+', '='];
@@ -99,4 +100,5 @@ class CalculatorState extends Equatable {
   List<Object> get props => [_value];
 }
 
+// ignore: must_be_immutable
 class CalculatorInitial extends CalculatorState {}

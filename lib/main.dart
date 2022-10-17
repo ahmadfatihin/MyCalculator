@@ -1,10 +1,10 @@
+import 'package:my_calculator/module/calculator/bloc/calculator/calculator_bloc.dart';
 import 'package:my_calculator/module/calculator/screen/calculator_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_calculator/theme.dart';
 
-import 'module/calculator/state/calculator_bloc/calculator_bloc.dart';
-import 'module/calculator/state/cubit/theme_cubit.dart';
+import 'module/calculator/bloc/theme/theme_bloc.dart';
 
 void main() {
   runApp(

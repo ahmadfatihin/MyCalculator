@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_calculator/module/calculator/state/cubit/theme_cubit.dart';
+
+import '../bloc/theme/theme_bloc.dart';
 
 class Header extends StatelessWidget {
   const Header({Key key}) : super(key: key);
@@ -17,6 +18,7 @@ class Header extends StatelessWidget {
           margin: EdgeInsets.only(left: 12),
           child: Text(
             'Theme: ${theme.isDark ? 'Dark' : 'Light'}',
+            style: TextStyle(fontWeight: FontWeight.w800),
           ),
         ),
         IconButton(

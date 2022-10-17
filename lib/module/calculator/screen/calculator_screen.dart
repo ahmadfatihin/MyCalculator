@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glassmorphism_ui/glassmorphism_ui.dart';
-import '../state/calculator_bloc/calculator_bloc.dart';
+import '../bloc/calculator/calculator_bloc.dart';
 import '../section/display.dart';
 import '../section/keyboard.dart';
 
